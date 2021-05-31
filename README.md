@@ -11,15 +11,20 @@
 - 第4水曜日　22時　明日第4木曜日は不燃ごみの日です。8時までに出してください。
 
 ## How to use
+- 以下のURLを参考にLINE Notifyのアクセストークンを発行
+
+https://qiita.com/nekoneck/items/caa91c016adeb81036ca
 - AWS Lambda関数にlambda_function.pyをコピー
+
 	ランタイム：python3系
+
 	環境変数：
 	- LINEPostURL:https://notify-api.line.me/api/notify(line notifyのURLを指定)
 	- LINEtoken: (line notifyのアクセストークンを指定)
 - AWS Lambda LayerにLayer.zip（中身はrequestsライブラリ）をアップロード
 - トリガーにはEventBridgeを設定
+
 　スケジュール式：cron(0 13 ? * MON,TUE,WED,FRI *)
 - test.pyはpython3実行環境でコードテストに使う
+
 	`python test.py`
-
-
